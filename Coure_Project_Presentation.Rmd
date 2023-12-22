@@ -1,0 +1,73 @@
+---
+title: "Prediction of Win Probability of FC Barcelona"
+author: "kosw"
+date: "2023-12-22"
+output: ioslides_presentation
+---
+
+```{r, echo=FALSE}
+if(system.file(package = 'png') == ""){
+  install.packages('png')
+}
+library(png)
+```
+
+
+## Motivate
+```{r echo=FALSE, fig.height=3, fig.width=4}
+x <- "https://raw.githubusercontent.com/rejeton1/First_RMarkdown_Presentation/main/game.png"
+download.file(x,'game.jpg', mode = 'wb')
+pp1 <- readPNG("game.png")
+plot.new() 
+rasterImage(pp1,0,0,1,1)
+```
+
+With this application, you can get win probability of FC Barcelona in real time only with 3 informations following.
+
+- The number of goals scored by FC Barcelona
+- The number of goals scored by Opponent team
+- Game time
+
+
+## About the prediction model
+
+For Prediction, we used 'Logistic Regression Model'
+
+### Explanatory variables
+
+- The number of goals scored by FC Barcelona(integer ranging from 0 to 10)
+
+- The number of goals scored by Opponent team(also ranging from 0 to 10)
+
+- Game time(integer ranging 0 from 90(min))
+
+### Response variable
+
+- Win Probability of FC Barcelona(%)
+('100 - Win Probability' is Probability of draw or lose)
+
+
+## Manual
+```{r echo=FALSE, fig.height=3, fig.width=5}
+y <- "https://raw.githubusercontent.com/rejeton1/First_RMarkdown_Presentation/main/usage.png"
+download.file(y,'usage.jpg', mode = 'wb')
+pp2 <- readPNG("usage.png")
+plot.new() 
+rasterImage(pp2,0,0,1,1)
+
+```
+
+The method of use of this application is following.
+
+1. ~ 3. Select values of explanatory variables.
+
+4. Then you can check the win probability at bottom right.
+
+
+## Thank you :)
+
+
+
+
+
+
